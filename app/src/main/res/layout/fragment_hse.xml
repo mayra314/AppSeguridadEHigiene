@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="16px"
+    android:background="#FFFFFF"
+    tools:context=".HSEFragment">
+<LinearLayout
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:layout_gravity="center"
+        android:layout_width="560px"
+        android:layout_height="200px"
+        android:src="@drawable/logotapia"/>
+
+    <TextView
+        android:textAppearance="?android:textAppearance"
+        android:gravity="center"
+        android:textColor="@color/azulTapia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cumpliendo a nuestros clientes"/>
+
+    <ImageView
+        android:layout_width="210px"
+        android:layout_height="210px"
+        android:src="@drawable/ic_person_black_24dp"/>
+
+    <TextView
+        android:textColor="@color/azulTapia"
+        android:gravity="center"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bienvenida Mayra !!!"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/txtl_pass_login"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorPrimary"
+            app:hintTextAppearance="@style/styleTextInputLayout">
+
+            <EditText
+                android:id="@+id/et_pass_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingresar Matricula"
+                android:inputType="text"
+                android:maxLength="50"
+                android:textSize="15sp" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:drawableLeft="@drawable/ic_search_black_24dp"
+            android:drawablePadding="10dp"
+            android:text="Buscar"
+            android:textColor="#FFFFFF"
+            android:background="@color/azulTapia"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:layout_width="450px"
+        android:layout_height="290px"
+        android:src="@drawable/qr"/>
+
+    <Button
+        android:id="@+id/bt_loginFragment"
+        android:background="@color/colorPrimary"
+        android:textColor="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Escanear Codigo"/>
+
+
+</LinearLayout>
+
+</FrameLayout>
