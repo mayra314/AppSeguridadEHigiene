@@ -9,14 +9,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="435dp"
+        android:layout_height="468dp"
         android:layout_gravity="center"
         android:layout_margin="16dp"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="560px"
-            android:layout_height="300px"
+            android:layout_width="293dp"
+            android:layout_height="178dp"
             android:layout_gravity="center"
             android:scaleType="fitXY"
             android:src="@drawable/logotapia" />
@@ -44,17 +44,19 @@
             android:id="@+id/txtl_pass_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:password="true"
             android:textColorHint="@color/colorPrimary"
-            app:hintTextAppearance="@style/styleTextInputLayout">
+            app:hintTextAppearance="@style/styleTextInputLayout"
+            tools:ignore="Deprecated">
 
             <EditText
                 android:id="@+id/et_pass_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/password"
-                android:inputType="text"
+                android:inputType="textPassword"
                 android:maxLength="50"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                tools:text="Contraseña" />
 
         </android.support.design.widget.TextInputLayout>
 
