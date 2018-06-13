@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ScanFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="98dp"
+            android:src="@drawable/logosecciontapia" />
+
+        <TextView
+            android:id="@+id/txtscan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/azulTapia"
+            android:textStyle="bold"
+            tools:text="ESCANEA TU CODIGO AQUI" />
+
+        <SurfaceView
+            android:id="@+id/camera_view"
+            android:layout_width="640px"
+            android:layout_height="480px"
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" />
+    </LinearLayout>
 </FrameLayout>
