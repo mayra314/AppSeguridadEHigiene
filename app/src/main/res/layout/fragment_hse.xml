@@ -82,7 +82,7 @@
             android:src="@drawable/qr" />
 
         <Button
-            android:id="@+id/bt_loginFragment"
+            android:id="@+id/bt_ScanCod"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:background="@color/colorPrimary"
