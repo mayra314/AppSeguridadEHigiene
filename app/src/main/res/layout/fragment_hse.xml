@@ -14,11 +14,11 @@
     android:orientation="vertical">
 
     <ImageView
-        android:scaleType="fitXY"
+        android:layout_width="248dp"
+        android:layout_height="103dp"
         android:layout_gravity="center"
-        android:layout_width="560px"
-        android:layout_height="200px"
-        android:src="@drawable/logotapia"/>
+        android:scaleType="fitXY"
+        android:src="@drawable/logotapia" />
 
     <TextView
         android:textAppearance="?android:textAppearance"
