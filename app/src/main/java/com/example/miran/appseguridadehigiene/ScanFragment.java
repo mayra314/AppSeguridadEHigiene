@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
@@ -13,7 +14,12 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import com.google.zxing.Result;
+
 import java.io.IOException;
+
+import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,7 +29,9 @@ import java.io.IOException;
  * Use the {@link ScanFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ScanFragment extends Fragment {
+public class ScanFragment extends Fragment  {
+        //implements ZXingScannerView.ResultHandler
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -32,7 +40,7 @@ public class ScanFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private ZXingScannerView escanerView;
     private OnFragmentInteractionListener mListener;
 
     public ScanFragment() {
@@ -101,7 +109,31 @@ public class ScanFragment extends Fragment {
         mListener = null;
     }
 
+    /**public void EscanerQR(View view){
+        escanerView = new ZXingScannerView(this.EscanerQR());
+        setContentView(escanerView);
+        escanerView.setResultHandler(this);
+        escanerView.startCamera();
 
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        escanerView.startCamera();
+    }
+
+    @Override
+    public void handleResult(com.google.zxing.Result result) {
+        AlertDialog.Builder
+                builder = new AlertDialog.Builder(this);
+        builder.setTitle("Resultado del escaner");
+        builder.setMessage(result.getText());
+        AlertDialog alertDialog=builder.create();
+        alertDialog.show();
+        escanerView.resumeCameraPreview(this);
+    }
+*/
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
