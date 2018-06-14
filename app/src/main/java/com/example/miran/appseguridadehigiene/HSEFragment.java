@@ -7,16 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LoginFragment extends Fragment {
-private Button loginFragment;
+public class HSEFragment extends Fragment {
 
-    public LoginFragment() {
+private Button hsefragment;
+
+    public HSEFragment() {
         // Required empty public constructor
     }
 
@@ -25,22 +24,25 @@ private Button loginFragment;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_login, container, false);
-        loginFragment = view.findViewById(R.id.bt_loginFragment);
-        loginFragment.setOnClickListener(new View.OnClickListener() {
+        View view = inflater.inflate(R.layout.fragment_hse, container, false);
+        hsefragment = view.findViewById(R.id.bt_ScanCod);
+        hsefragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getFragmentManager().beginTransaction()
-                        .replace(android.R.id.content,new HSEFragment())
+                        .replace(android.R.id.content, new ScanFragment())
                         .addToBackStack(null).commit();
             }
         });
-    return view;
+            return (view);
     }
 
-    @Override
-    public void onResume() {
-        super.onResume();
-        getActivity().setTitle("Seguridad e higiene");
+
+        @Override
+        public void onResume() {
+            super.onResume();
+            getActivity().setTitle("SCAN");
+        }
+
+
     }
-}
