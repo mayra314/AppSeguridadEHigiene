@@ -2,15 +2,20 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="16px"
     android:background="#FFFFFF"
-    tools:context=".HSEFragment">
+    tools:context=".fragment.HSEFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <LinearLayout
+        android:paddingBottom="20dp"
+        android:layout_margin="16dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -30,14 +35,16 @@
             android:textColor="@color/azulTapia" />
 
         <TextView
+            android:layout_marginBottom="15dp"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Bienvenida Mayra !!!"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@color/azulTapia" />
 
         <LinearLayout
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -65,31 +72,29 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@color/azulTapia"
                 android:drawableLeft="@drawable/ic_search_black_24dp"
                 android:drawablePadding="5dp"
                 android:padding="5dp"
                 android:text="Buscar"
-                android:textColor="#FFFFFF" />
+                style="@style/raisedButton"/>
 
 
         </LinearLayout>
 
         <ImageView
-            android:layout_width="127dp"
-            android:layout_height="114dp"
+            android:layout_margin="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
             android:scaleType="fitXY"
-            android:src="@drawable/qr" />
+            android:src="@drawable/qrtapia" />
 
         <Button
             android:id="@+id/bt_ScanCod"
             android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:background="@color/colorPrimary"
+            android:layout_height="wrap_content"
             android:text="Escanear Codigo"
-            android:textColor="#FFFFFF" />
-
+            style="@style/raisedButton"/>
 
     </LinearLayout>
-
+    </ScrollView>
 </FrameLayout>

@@ -1,37 +1,25 @@
-package com.example.miran.appseguridadehigiene;
+package com.example.miran.appseguridadehigiene.fragment;
 
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.google.zxing.Result;
+import com.example.miran.appseguridadehigiene.R;
 
-import java.io.IOException;
-
-import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ScanFragment.OnFragmentInteractionListener} interface
+ * {@link PerfilEmpFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link ScanFragment#newInstance} factory method to
+ * Use the {@link PerfilEmpFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ScanFragment extends Fragment  {
-        //implements ZXingScannerView.ResultHandler
-
+public class PerfilEmpFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -40,13 +28,12 @@ public class ScanFragment extends Fragment  {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private ZXingScannerView escanerView;
+
     private OnFragmentInteractionListener mListener;
 
-    public ScanFragment() {
+    public PerfilEmpFragment() {
         // Required empty public constructor
     }
-
 
     /**
      * Use this factory method to create a new instance of
@@ -54,19 +41,16 @@ public class ScanFragment extends Fragment  {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ScanFragment.
+     * @return A new instance of fragment PerfilEmpFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ScanFragment newInstance(String param1, String param2) {
-        ScanFragment fragment = new ScanFragment();
+    public static PerfilEmpFragment newInstance(String param1, String param2) {
+        PerfilEmpFragment fragment = new PerfilEmpFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
-
-
-
     }
 
     @Override
@@ -82,7 +66,7 @@ public class ScanFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_scan, container, false);
+        return inflater.inflate(R.layout.fragment_perfil_emp, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -109,37 +93,18 @@ public class ScanFragment extends Fragment  {
         mListener = null;
     }
 
-    /**public void EscanerQR(View view){
-        escanerView = new ZXingScannerView(this.EscanerQR());
-        setContentView(escanerView);
-        escanerView.setResultHandler(this);
-        escanerView.startCamera();
-
-    }
-
-    @Override
-    public void onPause(){
-        super.onPause();
-        escanerView.startCamera();
-    }
-
-    @Override
-    public void handleResult(com.google.zxing.Result result) {
-        AlertDialog.Builder
-                builder = new AlertDialog.Builder(this);
-        builder.setTitle("Resultado del escaner");
-        builder.setMessage(result.getText());
-        AlertDialog alertDialog=builder.create();
-        alertDialog.show();
-        escanerView.resumeCameraPreview(this);
-    }
-*/
-
+    /**
+     * This interface must be implemented by activities that contain this
+     * fragment to allow an interaction in this fragment to be communicated
+     * to the activity and potentially other fragments contained in that
+     * activity.
+     * <p>
+     * See the Android Training lesson <a href=
+     * "http://developer.android.com/training/basics/fragments/communicating.html"
+     * >Communicating with Other Fragments</a> for more information.
+     */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
-
-
-
 }

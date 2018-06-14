@@ -1,13 +1,16 @@
-package com.example.miran.appseguridadehigiene;
+package com.example.miran.appseguridadehigiene.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
+
+import com.example.miran.appseguridadehigiene.R;
+import com.example.miran.appseguridadehigiene.HomeActivity;
 
 
 /**
@@ -30,9 +33,7 @@ private Button loginFragment;
         loginFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getFragmentManager().beginTransaction()
-                        .replace(android.R.id.content,new HSEFragment())
-                        .addToBackStack(null).commit();
+                startActivity(new Intent(getContext() , HomeActivity.class));
             }
         });
     return view;
