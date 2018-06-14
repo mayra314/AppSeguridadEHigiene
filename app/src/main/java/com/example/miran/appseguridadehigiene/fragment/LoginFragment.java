@@ -1,6 +1,7 @@
 package com.example.miran.appseguridadehigiene;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -30,9 +31,7 @@ private Button loginFragment;
         loginFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getFragmentManager().beginTransaction()
-                        .replace(android.R.id.content,new HSEFragment())
-                        .addToBackStack(null).commit();
+                startActivity(new Intent(getContext() , ScanActivity.class));
             }
         });
     return view;

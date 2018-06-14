@@ -29,12 +29,13 @@ private Button hsefragment;
         hsefragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getFragmentManager().beginTransaction()
-                        .replace(android.R.id.content, new ScanFragment())
-                        .addToBackStack(null).commit();
+         getFragmentManager()
+        .beginTransaction()
+        .replace(android.R.id.content,new ScanFragment())
+        .addToBackStack(null).commit();
             }
         });
-            return (view);
+            return view;
     }
 
 

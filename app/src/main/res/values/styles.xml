@@ -11,4 +11,9 @@
     <style name="styleTextInputLayout" parent="TextAppearance.Design.Hint">
         <item name="android:textSize">15sp</item>
     </style>
+
+    <style name="raisedButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:backgroundTint">@color/azulTapia</item>
+        <item name="android:textColor">@color/blancoTapia</item>
+    </style>
 </resources>
