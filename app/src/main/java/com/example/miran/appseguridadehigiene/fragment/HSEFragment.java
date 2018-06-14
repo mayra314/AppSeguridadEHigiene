@@ -1,6 +1,7 @@
-package com.example.miran.appseguridadehigiene;
+package com.example.miran.appseguridadehigiene.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,12 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.miran.appseguridadehigiene.LectorQrActivity;
+import com.example.miran.appseguridadehigiene.R;
+import com.example.miran.appseguridadehigiene.HomeActivity;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class HSEFragment extends Fragment {
 
-private Button hsefragment;
+    private Button hsefragment;
 
     public HSEFragment() {
         // Required empty public constructor
@@ -29,21 +34,18 @@ private Button hsefragment;
         hsefragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-         getFragmentManager()
-        .beginTransaction()
-        .replace(android.R.id.content,new ScanFragment())
-        .addToBackStack(null).commit();
+                startActivity(new Intent(v.getContext(), LectorQrActivity.class));
             }
         });
-            return view;
+        return view;
     }
 
 
-        @Override
-        public void onResume() {
-            super.onResume();
-            getActivity().setTitle("SCAN");
-        }
-
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        getActivity().setTitle("SCAN");
     }
+
+
+}

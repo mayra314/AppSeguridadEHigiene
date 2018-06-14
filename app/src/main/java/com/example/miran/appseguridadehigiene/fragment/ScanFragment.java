@@ -1,9 +1,10 @@
-package com.example.miran.appseguridadehigiene;
+package com.example.miran.appseguridadehigiene.fragment;
 
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -12,24 +13,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.miran.appseguridadehigiene.HomeActivity;
 import com.google.zxing.Result;
+
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
-public class ScanFragment extends Fragment implements ZXingScannerView.ResultHandler{
-    private static final int ZBAR_CAMERA_PERMISSION = 1;
+public class ScanFragment extends Fragment implements ZXingScannerView.ResultHandler {
     private ZXingScannerView mScannerView;
 
-    @Override
-    public void onAttach(Context context) {
-        permisoCamaraQr();
-        super.onAttach(context);
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mScannerView = new ZXingScannerView(getActivity());
-        ScanActivity.obtenerToolbar().setVisibility(View.GONE);
         return mScannerView;
     }
 
@@ -43,22 +39,25 @@ public class ScanFragment extends Fragment implements ZXingScannerView.ResultHan
     @Override
     public void handleResult(Result rawResult) {
 
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
                 mScannerView.resumeCameraPreview(ScanFragment.this);
             }
+        }, 1000);
+
+
+        if (!rawResult.getText().equals("")) {
+            Log.i("codigoqr", rawResult.getText());
+        }
+    }
+
     @Override
     public void onPause() {
         super.onPause();
         mScannerView.stopCamera();
-    }
-
-    public void permisoCamaraQr() {
-        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA)
-                != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(getActivity(),
-                    new String[]{Manifest.permission.CAMERA}, ZBAR_CAMERA_PERMISSION);
-        } else {
-
-        }
     }
 
 }
