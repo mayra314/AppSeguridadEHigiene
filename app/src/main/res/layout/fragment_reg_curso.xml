@@ -15,9 +15,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.v7.widget.RecyclerView
-            android:layout_width="249dp"
-            android:layout_height="245dp" />
     </LinearLayout>
 
 </FrameLayout>
