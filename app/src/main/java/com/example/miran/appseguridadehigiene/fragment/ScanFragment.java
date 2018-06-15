@@ -52,7 +52,10 @@ public class ScanFragment extends Fragment implements ZXingScannerView.ResultHan
         if (!rawResult.getText().equals("")) {
             Log.i("codigoqr", rawResult.getText());
         }
+
+
     }
+
 
     @Override
     public void onPause() {
