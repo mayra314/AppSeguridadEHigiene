@@ -14,6 +14,7 @@ public class LectorQrActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        permisoCamaraQr();
         setContentView(R.layout.activity_lector_qr);
         getSupportFragmentManager().beginTransaction().replace(android.R.id.content,new ScanFragment()).commit();
     }
@@ -23,6 +24,8 @@ public class LectorQrActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.CAMERA}, ZBAR_CAMERA_PERMISSION);
         } else {
+
+
 
         }
     }
