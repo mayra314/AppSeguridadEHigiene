@@ -55,6 +55,8 @@ public class LectorQrActivity extends AppCompatActivity implements ZXingScannerV
                     new String[]{Manifest.permission.CAMERA}, Constantes.ZBAR_CAMERA_PERMISSION);
         } else {
 
+
+
         }
     }
 }
