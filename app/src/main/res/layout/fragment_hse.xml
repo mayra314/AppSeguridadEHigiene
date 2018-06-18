@@ -82,9 +82,9 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_margin="15dp"
-            android:layout_width="match_parent"
+            android:layout_width="226dp"
             android:layout_height="150dp"
+            android:layout_margin="15dp"
             android:scaleType="fitXY"
             android:src="@drawable/qrtapia" />
 
