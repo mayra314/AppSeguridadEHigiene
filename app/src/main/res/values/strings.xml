@@ -6,4 +6,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login">LOGIN</string>
+    <string name="nombrePerfil">Nombre</string>
+    <string name="matriculaPerfil">Matricula</string>
+    <string name="puestoPerfil">Puesto</string>
+    <string name="capacitaciones">Capacitaciones</string>
+    <string name="sanciones">Sanciones</string>
 </resources>
