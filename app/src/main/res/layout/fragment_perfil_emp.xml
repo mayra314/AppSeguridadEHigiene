@@ -76,6 +76,7 @@
                 android:maxLength="50"
                 android:textSize="15sp" />
 
+
         </android.support.design.widget.TextInputLayout>
 
         <TextView
@@ -108,10 +109,12 @@
         </ListView>
     </LinearLayout>
     </ScrollView>
+
     <android.support.design.widget.FloatingActionButton
-        android:layout_margin="20dp"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:layout_gravity="end|bottom"
 
-        android:layout_gravity="end|bottom"/>
+        android:layout_margin="20dp"
+        app:backgroundTint="@color/colorPrimary" />
 </FrameLayout>
