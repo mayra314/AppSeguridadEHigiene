@@ -12,4 +12,6 @@
     <string name="capacitaciones">Capacitaciones</string>
     <string name="sanciones">Sanciones</string>
     <string name="title_activity_perfil">PerfilActivity</string>
+    <string name="ingresar_matricula">Buscar Matricula</string>
+    <string name="cerrar_sesi_n">Cerrar Sesión</string>
 </resources>
