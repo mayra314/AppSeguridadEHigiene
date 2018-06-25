@@ -44,7 +44,7 @@ public class HSEFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        getActivity().setTitle("SCAN");
+        getActivity().setTitle("Inicio");
     }
 
 
