@@ -33,7 +33,9 @@
                 android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:src="@drawable/user"/>
+                android:src="@drawable/ic_person_black_24dp"
+
+                />
 
         <android.support.design.widget.TextInputLayout
             android:layout_marginTop="17dp"
@@ -69,7 +71,7 @@
                 android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                android:src="@drawable/padlock"/>
+                android:src="@drawable/ic_vpn_key_black_24dp"/>
 
         <android.support.design.widget.TextInputLayout
             android:layout_marginTop="17dp"
@@ -98,11 +100,12 @@
         </LinearLayout>
 
         <Button
+            android:layout_marginTop="40dp"
             android:id="@+id/bt_loginFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/boton_ovalo"
+            style="@style/raisedButton"
             android:text="@string/login"
             android:textColor="#FFFFFF" />
 
