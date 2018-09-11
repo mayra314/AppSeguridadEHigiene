@@ -75,16 +75,16 @@
                 android:maxLength="50"
                 android:textSize="15sp" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/capacitaciones"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/azulTapia" />
+
 
         </android.support.design.widget.TextInputLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/capacitaciones"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="@color/azulTapia" />
 
         <ListView
             android:layout_marginTop="12dp"
