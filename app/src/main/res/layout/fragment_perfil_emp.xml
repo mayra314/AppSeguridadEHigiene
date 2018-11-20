@@ -111,6 +111,7 @@
     </ScrollView>
 
     <android.support.design.widget.FloatingActionButton
+        android:id="@+id/bt_Registro"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_gravity="end|bottom"

@@ -1,15 +1,18 @@
 package com.example.miran.appseguridadehigiene.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.miran.appseguridadehigiene.R;
+import com.example.miran.appseguridadehigiene.RegistrarSActivity;
 
 
 /**
@@ -24,7 +27,7 @@ public class PerfilEmpFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private EditText nombre;
     private String mParam1;
-
+   private Button registro;
     private OnFragmentInteractionListener mListener;
 
     public PerfilEmpFragment() {
@@ -44,6 +47,8 @@ public class PerfilEmpFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
+
+
         }
     }
 
@@ -53,13 +58,12 @@ public class PerfilEmpFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_perfil_emp, container, false);
         nombre = view.findViewById(R.id.et_nombre_perfil);
+        registro =(Button)view.findViewById(R.id.bt_Registro);
         nombre.setText(mParam1);
+
         return view;
+
     }
-
-
-
-
 
     @Override
     public void onResume() {
