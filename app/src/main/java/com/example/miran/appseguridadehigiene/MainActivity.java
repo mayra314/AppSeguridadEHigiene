@@ -1,5 +1,6 @@
 package com.example.miran.appseguridadehigiene;
 
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(android.R.id.content,new LoginFragment())
@@ -25,5 +27,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+    public static  class  Peticion extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            return null;
+        }
+    }
 
 }
