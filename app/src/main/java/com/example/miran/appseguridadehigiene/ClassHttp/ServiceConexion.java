@@ -10,10 +10,11 @@ import retrofit2.http.POST;
 
 public interface ServiceConexion {
 
-    @GET("http://localhost:20691/Service1.svc")
-    Call<List<Service>>
+    @GET("GetLogin")
+    Call<List<ResponseService>> getUsuarioGet();
 
 
-    @POST("http://localhost:20691/Service1.svc")
+    @POST("GetLogin")
+    Call<List<ResponseService>> getUsuarioPost();
 
 }
