@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
             final String Url= "http://localhost:20691/Service1.svc/";
 
-            Retrofit retrofit = new Retrofit.Builder();
+            Retrofit retrofit = new Retrofit();
             .
             return null;
         }
