@@ -41,6 +41,9 @@ private EditText txtPassword;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login, container, false);
+        txtUser = view.findViewById(R.id.txtl_username_login);
+        txtPassword = view.findViewById(R.id.txtl_pass_login);
+        
         loginFragment = view.findViewById(R.id.bt_loginFragment);
         loginFragment.setOnClickListener(new View.OnClickListener() {
             @Override

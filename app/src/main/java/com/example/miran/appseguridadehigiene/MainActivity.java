@@ -8,6 +8,8 @@ import android.widget.EditText;
 
 import com.example.miran.appseguridadehigiene.fragment.LoginFragment;
 
+import retrofit2.Retrofit;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button loginFragment;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         getSupportFragmentManager()
                 .beginTransaction()
@@ -32,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected Void doInBackground(Void... voids) {
+
+            final String Url= "http://localhost:20691/Service1.svc/";
+
+            Retrofit retrofit = new Retrofit.Builder();
+            .
             return null;
         }
     }
