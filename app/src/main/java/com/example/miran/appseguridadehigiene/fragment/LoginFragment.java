@@ -14,6 +14,12 @@ import android.widget.TextView;
 import com.example.miran.appseguridadehigiene.R;
 import com.example.miran.appseguridadehigiene.HomeActivity;
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,6 +48,10 @@ private EditText txtPassword;
         });
     return view;
     }
+
+
+
+
 
     @Override
     public void onResume() {
