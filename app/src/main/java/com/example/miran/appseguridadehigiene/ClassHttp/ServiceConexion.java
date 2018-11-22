@@ -13,8 +13,14 @@ public interface ServiceConexion {
     @GET("GetLogin")
     Call<List<ResponseService>> getUsuarioGet();
 
+  /*  @GET("GetLogin")
+    Call<List<ResponseService>> getPwsGet(); */
+
 
     @POST("GetLogin")
     Call<List<ResponseService>> getUsuarioPost();
+
+/*   @POST("GetLogin")
+    Call<List<ResponseService>> getpwdPostPost();*/
 
 }
