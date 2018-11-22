@@ -8,6 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
 import com.example.miran.appseguridadehigiene.R;
 import com.example.miran.appseguridadehigiene.HomeActivity;
 
@@ -17,6 +20,8 @@ import com.example.miran.appseguridadehigiene.HomeActivity;
  */
 public class LoginFragment extends Fragment {
 private Button loginFragment;
+private EditText txtUser;
+private EditText txtPassword;
 
     public LoginFragment() {
         // Required empty public constructor
