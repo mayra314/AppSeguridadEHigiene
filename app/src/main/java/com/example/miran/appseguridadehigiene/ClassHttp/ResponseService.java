@@ -1,25 +1,25 @@
 package com.example.miran.appseguridadehigiene.ClassHttp;
 
 public class ResponseService {
-    private  int usuario;
+    private  String usuario;
     private String pwd;
 
     public  ResponseService(){
 
     }
 
-    public ResponseService(int usuario, String pwd){
+    public ResponseService( String usuario, String pwd){
         super();
         this.usuario = usuario;
         this.pwd = pwd;
 
     }
 
-    public int getUsuario() {
+    public String getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(int usuario) {
+    public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
 
