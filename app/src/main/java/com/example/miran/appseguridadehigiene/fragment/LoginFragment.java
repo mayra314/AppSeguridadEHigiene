@@ -64,6 +64,13 @@ private EditText txtPassword;
         return view;
     }
 
+    public String enviarPost_(String user, String pas)
+    {
+
+
+    }
+
+
 
     public static  class  Peticion extends AsyncTask<Void, Void, Void> {
 
