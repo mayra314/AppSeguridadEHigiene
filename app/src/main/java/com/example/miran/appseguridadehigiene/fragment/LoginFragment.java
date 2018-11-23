@@ -14,13 +14,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.miran.appseguridadehigiene.ClassHttp.HttpClient;
 import com.example.miran.appseguridadehigiene.ClassHttp.ResponseService;
 import com.example.miran.appseguridadehigiene.ClassHttp.ServiceConexion;
 import com.example.miran.appseguridadehigiene.R;
 import com.example.miran.appseguridadehigiene.HomeActivity;
 
+import java.io.DataOutput;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URI;
+import java.net.URL;
 import java.util.List;
+import java.util.Scanner;
+
+import javax.net.ssl.HttpsURLConnection;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -67,8 +76,33 @@ private EditText txtPassword;
     public String enviarPost_(String user, String pas)
     {
 
+        String parametros  = "user" + user +"pas" + pas;
+        HttpsURLConnection conexion = null;
+        String respuesta = "";
+        try{
+            URL url = new URL("http://192.168.1.152:20691/Service1.svc/");
+            conexion= (HttpsURLConnection) url.openConnection();
+            conexion.setRequestMethod("POST");
+            conexion.setRequestProperty("Content-Length", "" + Integer.toString(parametros.getBytes().length));
 
-    }
+            conexion.setDoOutput(true);
+            DataOutputStream wr = new DataOutputStream(conexion.getOutputStream());
+            wr.writeBytes(parametros);
+            wr.close();
+
+            Scanner inStream = new Scanner(conexion.getInputStream());
+
+            while (inStream.hasNextLine());
+            respuesta+=(inStream.nextLine());
+            return respuesta.toString();
+
+
+        } catch (Exception e){
+
+            
+
+             }}
+
 
 
 
@@ -77,7 +111,7 @@ private EditText txtPassword;
         @Override
         protected Void doInBackground(Void... voids) {
 
-            final String Url = "http://localhost:20691/Service1.svc/";
+            final String Url = "http://192.168.1.152:20691/Service1.svc/";
 
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(Url)
@@ -85,7 +119,7 @@ private EditText txtPassword;
                     .build();
 
             ServiceConexion service = retrofit.create(ServiceConexion.class);
-            Call<List<ResponseService>> response = service.getUsuarioGet();
+            Call<List<ResponseService>> response = service.getUsuarioPost();
 
             try {
                 for (ResponseService user : response.execute().body()) {

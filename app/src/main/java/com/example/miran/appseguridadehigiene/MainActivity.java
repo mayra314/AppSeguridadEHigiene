@@ -19,9 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button loginFragment;
-    private EditText txtUser;
-    private EditText txtPassword;
+
 
 
     @Override
