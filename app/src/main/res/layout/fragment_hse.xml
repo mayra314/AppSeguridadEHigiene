@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFFFFF"
+    tools:context=".fragment.HSEFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:paddingBottom="20dp"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="293dp"
+            android:layout_height="129dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:src="@drawable/logotapia" />
+
+
+        <ImageView
+            android:id="@+id/FotoEmp"
+            android:layout_width="123dp"
+            android:layout_height="115dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_person_black_24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:text="Bienvenida Mayra"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:drawableEnd="@drawable/ic_search_black_24dp"
+            android:id="@+id/et_pass_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColorHint="#000000"
+            android:hint="@string/ingresar_matricula"
+            android:background="@drawable/elemento_search"
+            android:inputType="text"
+            android:maxLength="50"
+            android:textSize="15sp" />
+
+
+        <TextView
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Escanea tu codigo Aqui"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+        <Button
+            android:focusedByDefault="true"
+            android:layout_marginTop="10dp"
+            android:id="@+id/bt_ScanCod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Escanear Codigo"
+            android:background="@drawable/boton_ovalo"
+            style="@style/raisedButton"/>
+
+
+    </LinearLayout>
+    </ScrollView>
+</FrameLayout>
