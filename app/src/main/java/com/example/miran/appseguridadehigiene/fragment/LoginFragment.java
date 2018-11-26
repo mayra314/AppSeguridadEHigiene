@@ -63,8 +63,8 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login, container, false);
-        txtUser = (EditText) view.findViewById(R.id.txtl_username_login);
-        txtPassword = (EditText) view.findViewById(R.id.txtl_pass_login);
+        txtUser = (EditText) view.findViewById(R.id.et_username_login);
+        txtPassword = (EditText) view.findViewById(R.id.et_pass_login);
         loginFrag = (Button) view.findViewById(R.id.bt_loginFragment);
 
 
