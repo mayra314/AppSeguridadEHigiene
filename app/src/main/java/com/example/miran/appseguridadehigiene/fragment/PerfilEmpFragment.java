@@ -4,7 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import android.widget.EditText;
 
 import com.example.miran.appseguridadehigiene.R;
 import com.example.miran.appseguridadehigiene.RegistrarSActivity;
+import com.example.miran.appseguridadehigiene.entityTO.EmpleadoTO;
 
 
 /**
@@ -26,18 +29,19 @@ import com.example.miran.appseguridadehigiene.RegistrarSActivity;
 public class PerfilEmpFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private EditText nombre;
-    private String mParam1;
-   private Button registro;
+    private  EditText matricula;
+    private EmpleadoTO empleado;
+    private FloatingActionButton registro;
     private OnFragmentInteractionListener mListener;
 
     public PerfilEmpFragment() {
         // Required empty public constructor
     }
 
-    public static PerfilEmpFragment newInstance(String param1) {
+    public static PerfilEmpFragment newInstance(EmpleadoTO param1) {
         PerfilEmpFragment fragment = new PerfilEmpFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
+        args.putSerializable(ARG_PARAM1, param1);
         fragment.setArguments(args);
         return fragment;
     }
@@ -46,9 +50,8 @@ public class PerfilEmpFragment extends Fragment {
         public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-
-
+            empleado = (EmpleadoTO) getArguments().getSerializable(ARG_PARAM1);
+            Log.i("employeeee",empleado.toString());
         }
     }
 
@@ -58,9 +61,10 @@ public class PerfilEmpFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_perfil_emp, container, false);
         nombre = view.findViewById(R.id.et_nombre_perfil);
-        registro =(Button)view.findViewById(R.id.bt_Registro);
-        nombre.setText(mParam1);
-
+        matricula = view.findViewById(R.id.et_matricula_perfil);
+        registro =(FloatingActionButton)view.findViewById(R.id.bt_Registro);
+        nombre.setText(empleado.getNombre());
+        matricula.setText(new StringBuilder().append(String.valueOf(empleado.getPkEmpleado())).append(String.valueOf(empleado.getFkEmpresa())).append(String.valueOf(empleado.getFkTipoUsuario())).toString());
         return view;
 
     }

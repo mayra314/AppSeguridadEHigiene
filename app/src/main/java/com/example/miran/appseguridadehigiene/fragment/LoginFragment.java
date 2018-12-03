@@ -55,7 +55,6 @@ public class LoginFragment extends Fragment {
 
                 try {
                     LoginService login = new LoginService();
-                    // mse crea un objeto de tipo loginTO
                     LoginTO loginTo = new LoginTO();
                     loginTo.setUser(txtUser.getText().toString());
                     loginTo.setPassword(txtPassword.getText().toString());

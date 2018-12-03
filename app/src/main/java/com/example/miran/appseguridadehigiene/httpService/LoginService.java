@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.example.miran.appseguridadehigiene.entityTO.LoginTO;
+import com.example.miran.appseguridadehigiene.util.UtilSeguridad;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
@@ -20,14 +21,14 @@ public class LoginService extends AsyncTask<LoginTO,Integer,String> {
     protected String doInBackground(LoginTO... loginTOS) {
          String name = "";
         try {
-            URL url = new URL("http://192.168.1.68:3000/api/user/loginUser?user="+loginTOS[0].getUser()+"&password="+loginTOS[0].getPassword()+"");
+            URL url = new URL("http://fa981656.ngrok.io/api/user/loginUser?user="+loginTOS[0].getUser()+"&password="+loginTOS[0].getPassword()+"");
 
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
             int responseCode = urlConnection.getResponseCode();
 
             if (responseCode == HttpURLConnection.HTTP_OK){
-                JsonObject jobj = new Gson().fromJson(readStream(urlConnection.getInputStream()), JsonObject.class);
+                JsonObject jobj = new Gson().fromJson(UtilSeguridad.readStream(urlConnection.getInputStream()), JsonObject.class);
                name = jobj.get("name").getAsString();
             }
         } catch (Exception e) {
@@ -36,32 +37,4 @@ public class LoginService extends AsyncTask<LoginTO,Integer,String> {
         return name;
     }
 
-    private String readStream(InputStream in) {
-        BufferedReader reader = null;
-        StringBuffer response = new StringBuffer();
-        try {
-            reader = new BufferedReader(new InputStreamReader(in));
-            String line = "";
-            while ((line = reader.readLine()) != null) {
-                response.append(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        return response.toString();
-    }
-
-    @Override
-    protected void onPostExecute(String s) {
-        Log.i("value name tapia" , s);
-        super.onPostExecute(s);
-    }
 }

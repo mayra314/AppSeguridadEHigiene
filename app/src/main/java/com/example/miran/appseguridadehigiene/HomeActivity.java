@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 
+import com.example.miran.appseguridadehigiene.entityTO.EmpleadoTO;
 import com.example.miran.appseguridadehigiene.fragment.HSEFragment;
 import com.example.miran.appseguridadehigiene.fragment.PerfilEmpFragment;
 import com.example.miran.appseguridadehigiene.util.Constantes;
@@ -23,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
 
         savedInstanceState = getIntent().getExtras();
         if (savedInstanceState != null) {
-            String stringExtra = getIntent().getStringExtra(Constantes.TEXT);
+            EmpleadoTO stringExtra = (EmpleadoTO) getIntent().getSerializableExtra(Constantes.TEXT);
 
                 getSupportFragmentManager()
                         .beginTransaction()
