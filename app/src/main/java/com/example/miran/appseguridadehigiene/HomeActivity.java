@@ -3,39 +3,41 @@ package com.example.miran.appseguridadehigiene;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 
 import com.example.miran.appseguridadehigiene.entityTO.EmpleadoTO;
+import com.example.miran.appseguridadehigiene.entityTO.ResponseUserTO;
 import com.example.miran.appseguridadehigiene.fragment.HSEFragment;
 import com.example.miran.appseguridadehigiene.fragment.PerfilEmpFragment;
+import com.example.miran.appseguridadehigiene.interfaz.ComunicadorDialog;
 import com.example.miran.appseguridadehigiene.util.Constantes;
 
-public class HomeActivity extends AppCompatActivity {
+import java.util.List;
+
+public class HomeActivity extends AppCompatActivity  {
+    public static final String USER_ADMIN = "userAdmin";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        savedInstanceState = getIntent().getExtras();
-        if (savedInstanceState != null) {
+            ResponseUserTO userTO = (ResponseUserTO) getIntent().getSerializableExtra(USER_ADMIN);
             EmpleadoTO stringExtra = (EmpleadoTO) getIntent().getSerializableExtra(Constantes.TEXT);
 
+            if (userTO != null && stringExtra != null) {
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(android.R.id.content,PerfilEmpFragment.newInstance(stringExtra))
+                        .replace(android.R.id.content, PerfilEmpFragment.newInstance(stringExtra, userTO))
                         .commit();
 
             }else {
 
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(android.R.id.content, new HSEFragment())
+                    .replace(android.R.id.content, HSEFragment.newInstance(userTO))
                     .commit();
         }
 
@@ -58,4 +60,7 @@ public class HomeActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
 }

@@ -10,6 +10,7 @@ public class EmpleadoTO  implements Serializable {
     public String Nombre ;
     public String ApellidoPaterno;
     public String ApellidoMaterno;
+    public String Puesto;
 
     public int getPkEmpleado() {
         return PkEmpleado;
@@ -59,6 +60,14 @@ public class EmpleadoTO  implements Serializable {
         ApellidoMaterno = apellidoMaterno;
     }
 
+    public String getPuesto() {
+        return Puesto;
+    }
+
+    public void setPuesto(String puesto) {
+        Puesto = puesto;
+    }
+
     @Override
     public String toString() {
         return "EmpleadoTO{" +
@@ -68,6 +77,7 @@ public class EmpleadoTO  implements Serializable {
                 ", Nombre='" + Nombre + '\'' +
                 ", ApellidoPaterno='" + ApellidoPaterno + '\'' +
                 ", ApellidoMaterno='" + ApellidoMaterno + '\'' +
+                ", Puesto='" + Puesto + '\'' +
                 '}';
     }
 }

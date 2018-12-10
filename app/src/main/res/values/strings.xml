@@ -15,4 +15,18 @@
     <string name="title_activity_perfil">PerfilActivity</string>
     <string name="ingresar_matricula">Buscar Matricula</string>
     <string name="cerrar_sesi_n">Cerrar Sesión</string>
+    <string name="estatus">Estatus</string>
+    <string name="nombre">Nombre</string>
+    <string name="otras_sanciones">Otras Sanciones</string>
+    <string name="observaciones">Observaciones</string>
+    <string name="matricula">Matricula</string>
+    <string name="Fecha">Fecha</string>
+
+
+    <string-array name="num_sanciones">
+        <item>1ra vez</item>
+        <item>2da vez</item>
+        <item>3ra vez</item>
+    </string-array>
+
 </resources>

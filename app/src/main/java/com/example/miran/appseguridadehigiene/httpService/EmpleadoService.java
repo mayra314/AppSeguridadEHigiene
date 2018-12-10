@@ -18,7 +18,7 @@ public class EmpleadoService extends AsyncTask<Long,Integer,EmpleadoTO> {
     protected EmpleadoTO doInBackground(Long... longs) {
         EmpleadoTO empleado = null;
         try {
-            URL url = new URL("http://fa981656.ngrok.io/api/user/getEmpleado?matricula=" + longs[0]);
+            URL url = new URL("http://10.11.1.46:3000/api/user/getEmpleado?matricula=" + longs[0]);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
             int responseCode = urlConnection.getResponseCode();
@@ -32,6 +32,7 @@ public class EmpleadoService extends AsyncTask<Long,Integer,EmpleadoTO> {
                 empleado.setNombre(jobj.get("Nombre").getAsString());
                 empleado.setApellidoPaterno(jobj.get("ApellidoPaterno").getAsString());
                 empleado.setApellidoMaterno(jobj.get("ApellidoMaterno").getAsString());
+                empleado.setPuesto(jobj.get("Puesto").getAsString());
             }
         }catch (Exception e){
             e.printStackTrace();

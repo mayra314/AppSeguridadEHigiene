@@ -12,12 +12,16 @@ import android.widget.Toast;
 import com.example.miran.appseguridadehigiene.HomeActivity;
 import com.example.miran.appseguridadehigiene.R;
 import com.example.miran.appseguridadehigiene.entityTO.LoginTO;
+import com.example.miran.appseguridadehigiene.entityTO.ResponseUserTO;
 import com.example.miran.appseguridadehigiene.httpService.LoginService;
+
+import java.io.Serializable;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class LoginFragment extends Fragment {
+    public static final String USER_ADMIN = "userAdmin";
     private Button loginFrag;
     private EditText txtUser;
     private EditText txtPassword;
@@ -58,9 +62,10 @@ public class LoginFragment extends Fragment {
                     LoginTO loginTo = new LoginTO();
                     loginTo.setUser(txtUser.getText().toString());
                     loginTo.setPassword(txtPassword.getText().toString());
-                    String name = login.execute(loginTo).get();
-                    if (!name.equals("")){
+                    ResponseUserTO responseUserTO = login.execute(loginTo).get();
+                    if (null != responseUserTO ){
                         Intent i = new Intent(getContext(), HomeActivity.class);
+                        i.putExtra(USER_ADMIN,(Serializable) responseUserTO);
                         startActivity(i);
                     return;
                     }

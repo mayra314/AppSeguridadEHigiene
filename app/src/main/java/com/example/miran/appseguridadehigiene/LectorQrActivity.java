@@ -11,6 +11,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.miran.appseguridadehigiene.entityTO.EmpleadoTO;
+import com.example.miran.appseguridadehigiene.entityTO.ResponseUserTO;
 import com.example.miran.appseguridadehigiene.fragment.HSEFragment;
 import com.example.miran.appseguridadehigiene.httpService.EmpleadoService;
 import com.example.miran.appseguridadehigiene.util.Constantes;
@@ -25,15 +26,16 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class LectorQrActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler{
 
-
+    ResponseUserTO userTO;
     private ZXingScannerView mScannerView;
-
+    public static final String USER_ADMIN = "userAdmin";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         permisoCamaraQr();
         mScannerView = new ZXingScannerView(this);
         setContentView(mScannerView);
+         userTO = (ResponseUserTO) getIntent().getSerializableExtra(USER_ADMIN);
     }
 
     @Override
@@ -53,6 +55,7 @@ public class LectorQrActivity extends AppCompatActivity implements ZXingScannerV
 
                 if ( empleado != null  && empleado.getPkEmpleado() > 0){
                     result.putExtra(Constantes.TEXT, empleado);
+                    result.putExtra(USER_ADMIN,userTO);
                     startActivity(result);
                 }else {
                     Intent intentError = new Intent(getBaseContext(), HomeActivity.class);
