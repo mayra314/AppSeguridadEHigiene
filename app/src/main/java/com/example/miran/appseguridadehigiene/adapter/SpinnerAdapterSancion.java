@@ -14,11 +14,11 @@ import com.example.miran.appseguridadehigiene.entityTO.CatSancionTO;
 
 import java.util.List;
 
-public class SpinnerAdapter extends BaseAdapter {
+public class SpinnerAdapterSancion extends BaseAdapter {
 
     List<CatSancionTO> sancion;
     LayoutInflater inflater;
-    public SpinnerAdapter(List<CatSancionTO> sancion, Context context) {
+    public SpinnerAdapterSancion(List<CatSancionTO> sancion, Activity context) {
     this.sancion = sancion;
     this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -29,8 +29,8 @@ public class SpinnerAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
-        return position;
+    public CatSancionTO  getItem(int position) {
+        return this.sancion.get(position);
     }
 
     @Override

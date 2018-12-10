@@ -3,7 +3,7 @@ package com.example.miran.appseguridadehigiene.entityTO;
 import java.util.Date;
 import java.util.List;
 
-public class SancionTO {
+public class SancionEmpleadoTO {
 
     public int PkRegSancion;
     public int FkEmpleado;
@@ -18,6 +18,24 @@ public class SancionTO {
     public int FkUsuarioGral;
     public List<Long> IdSancionesFaltas;
 
+
+    public SancionEmpleadoTO() {
+    }
+
+    public SancionEmpleadoTO(int pkRegSancion, int fkEmpleado, int fkEmpresa, int fkTipoUsuario, Date fecha, String numSancion, String otrasFaltas, String observaciones, int fkSancion, int fkEstatus, int fkUsuarioGral, List<Long> idSancionesFaltas) {
+        PkRegSancion = pkRegSancion;
+        FkEmpleado = fkEmpleado;
+        FkEmpresa = fkEmpresa;
+        FkTipoUsuario = fkTipoUsuario;
+        Fecha = fecha;
+        NumSancion = numSancion;
+        OtrasFaltas = otrasFaltas;
+        Observaciones = observaciones;
+        FkSancion = fkSancion;
+        FkEstatus = fkEstatus;
+        FkUsuarioGral = fkUsuarioGral;
+        IdSancionesFaltas = idSancionesFaltas;
+    }
 
     public int getPkRegSancion() {
         return PkRegSancion;
@@ -115,5 +133,21 @@ public class SancionTO {
         IdSancionesFaltas = idSancionesFaltas;
     }
 
-
+    @Override
+    public String toString() {
+        return "SancionEmpleadoTO{" +
+                "PkRegSancion=" + PkRegSancion +
+                ", FkEmpleado=" + FkEmpleado +
+                ", FkEmpresa=" + FkEmpresa +
+                ", FkTipoUsuario=" + FkTipoUsuario +
+                ", Fecha=" + Fecha +
+                ", NumSancion='" + NumSancion + '\'' +
+                ", OtrasFaltas='" + OtrasFaltas + '\'' +
+                ", Observaciones='" + Observaciones + '\'' +
+                ", FkSancion=" + FkSancion +
+                ", FkEstatus=" + FkEstatus +
+                ", FkUsuarioGral=" + FkUsuarioGral +
+                ", IdSancionesFaltas=" + IdSancionesFaltas +
+                '}';
+    }
 }
