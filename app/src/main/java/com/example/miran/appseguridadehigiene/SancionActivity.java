@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -55,6 +56,8 @@ public class SancionActivity extends AppCompatActivity implements ComunicadorDia
           empleado = (EmpleadoTO) bundle.getSerializable(ARG_PARAM1);
           user = (ResponseUserTO) bundle.getSerializable(USER_ADMIN);
         }
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         spinnerSAncion = findViewById(R.id.spinnerSancion);
         spinnerSAncion.setAdapter(cargaComboSancion());
@@ -124,6 +127,17 @@ public class SancionActivity extends AppCompatActivity implements ComunicadorDia
         }
     }
 
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     public SpinnerAdapter cargaComboSancion() {
         try {

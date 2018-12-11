@@ -22,7 +22,7 @@ public class LoginService extends AsyncTask<LoginTO,Integer,ResponseUserTO> {
     protected ResponseUserTO doInBackground(LoginTO... loginTOS) {
          ResponseUserTO responseUser = null;
         try {
-            URL url = new URL("http://10.11.1.46:3000/api/user/loginUser?user="+loginTOS[0].getUser()+"&password="+loginTOS[0].getPassword()+"");
+            URL url = new URL("http://192.168.1.68:3000/api/user/loginUser?user="+loginTOS[0].getUser()+"&password="+loginTOS[0].getPassword()+"");
 
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");

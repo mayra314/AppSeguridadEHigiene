@@ -34,7 +34,7 @@ public class SancionEmpleadoService {
            protected List<CatSancionTO> doInBackground(Void... voids) {
                List<CatSancionTO> listSanciones = null;
                try {
-                   URL url = new URL("http://10.11.1.46:3000/api/user/Sanciones");
+                   URL url = new URL("http://192.168.1.68:3000/api/user/Sanciones");
                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                    urlConnection.setRequestMethod("GET");
                    int responseCode = urlConnection.getResponseCode();
@@ -73,7 +73,7 @@ public class SancionEmpleadoService {
             protected List<CatTipoFaltasTO> doInBackground(Void... voids) {
                 List<CatTipoFaltasTO> listFaltas = null;
                 try {
-                    URL url = new URL("http://10.11.1.46:3000/api/user/TipoFaltas");
+                    URL url = new URL("http://192.168.1.68:3000/api/user/TipoFaltas");
                     HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                     urlConnection.setRequestMethod("GET");
                     int responseCode = urlConnection.getResponseCode();
@@ -110,7 +110,7 @@ public class SancionEmpleadoService {
             protected Long doInBackground(SancionEmpleadoTO... SancionEmpleados) {
                 HttpURLConnection connection;
                 try {
-                    connection = (HttpURLConnection) new URL("http://10.11.1.46:3000/api/user/SaveSancion")
+                    connection = (HttpURLConnection) new URL("http://192.168.1.68:3000/api/user/SaveSancion")
                             .openConnection();
                     connection.setRequestMethod("POST");
                     connection.setRequestProperty("Content-Type", "application/json");
@@ -148,14 +148,14 @@ public class SancionEmpleadoService {
 
 
 
-    public  List<ReporteSancionTO> getCapacitaciones(Long id) throws ExecutionException, InterruptedException {
+    public  List<ReporteSancionTO> getSanciones(Long id) throws ExecutionException, InterruptedException {
         AsyncTask<Long, Void, List<ReporteSancionTO>> asyncTask = new AsyncTask<Long, Void, List<ReporteSancionTO>>() {
 
             @Override
             protected List<ReporteSancionTO> doInBackground(Long... voids) {
                 List<ReporteSancionTO> listCapacitaciones = null;
                 try {
-                    URL url = new URL("http://10.11.1.46:3000/api/user/getReporteSancion?matricula="+voids[0]);
+                    URL url = new URL("http://192.168.1.68:3000/api/user/getReporteSancion?matricula="+voids[0]);
                     HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                     urlConnection.setRequestMethod("GET");
                     int responseCode = urlConnection.getResponseCode();

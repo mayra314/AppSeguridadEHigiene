@@ -20,6 +20,8 @@ import com.google.zxing.common.StringUtils;
 
 import org.modelmapper.internal.cglib.core.Converter;
 
+import java.io.Serializable;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
@@ -49,12 +51,12 @@ public class LectorQrActivity extends AppCompatActivity implements ZXingScannerV
     public void handleResult(Result rawResult) {
         try {
             if (org.apache.commons.lang3.StringUtils.isNumeric(rawResult.getText())) {
-               Intent result = new Intent(getBaseContext(), HomeActivity.class);
+               Intent result = new Intent(getBaseContext(), EmpleadoActivity.class);
                 EmpleadoService service = new EmpleadoService();
-                EmpleadoTO empleado = service.execute(Long.parseLong((rawResult.getText()))).get();
+                List<EmpleadoTO> empleado = service.execute(Long.parseLong((rawResult.getText()))).get();
 
-                if ( empleado != null  && empleado.getPkEmpleado() > 0){
-                    result.putExtra(Constantes.TEXT, empleado);
+                if ( empleado.size() > 0){
+                    result.putExtra(Constantes.TEXT, (Serializable) empleado);
                     result.putExtra(USER_ADMIN,userTO);
                     startActivity(result);
                 }else {

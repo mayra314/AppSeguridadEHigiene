@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +36,7 @@ public class PerfilEmpFragment extends Fragment {
     private FloatingActionButton registro;
     private OnFragmentInteractionListener mListener;
     private Button capacitacion;
+    private Button sancion;
     public PerfilEmpFragment() {
         // Required empty public constructor
     }
@@ -83,9 +83,22 @@ public class PerfilEmpFragment extends Fragment {
         capacitacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getFragmentManager().beginTransaction().replace(android.R.id.content, CapacitacionesFragment.newInstance(empleado)).commit();
+                getFragmentManager().beginTransaction().replace(android.R.id.content, CapacitacionFragment.newInstance(empleado)).addToBackStack(null).commit();
+
             }
         });
+
+
+        sancion = view.findViewById(R.id.btnSanciones);
+        sancion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().beginTransaction().replace(android.R.id.content, SansionescionesFragment.newInstance(empleado)).addToBackStack(null).commit();
+
+            }
+        });
+
+
         puesto.setText(empleado.getPuesto());
         nombre.setText(empleado.getNombre());
         matricula.setText(new StringBuilder().append(String.valueOf(empleado.getPkEmpleado())).append(String.valueOf(empleado.getFkEmpresa())).append(String.valueOf(empleado.getFkTipoUsuario())).toString());

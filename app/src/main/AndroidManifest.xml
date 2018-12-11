@@ -37,7 +37,8 @@
             android:name=".LectorQrActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".SancionActivity"></activity>
+        <activity android:name=".SancionActivity" />
+        <activity android:name=".EmpleadoActivity"></activity>
     </application>
 
 </manifest>
