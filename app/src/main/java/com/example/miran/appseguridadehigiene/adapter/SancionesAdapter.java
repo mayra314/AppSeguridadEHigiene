@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -15,12 +14,12 @@ import com.example.miran.appseguridadehigiene.entityTO.ReporteSancionTO;
 
 import java.util.List;
 
-public class CapacitacionesAdapter extends  RecyclerView.Adapter<CapacitacionesAdapter.MyViewHolder> {
+public class SancionesAdapter extends  RecyclerView.Adapter<SancionesAdapter.MyViewHolder> {
 
 
     List<ReporteSancionTO> capacitaciones;
     Context context;
-    public CapacitacionesAdapter(List<ReporteSancionTO> capacitaciones, Context context){
+    public SancionesAdapter(List<ReporteSancionTO> capacitaciones, Context context){
         this.capacitaciones = capacitaciones;
         this.context = context;
     }
@@ -28,8 +27,8 @@ public class CapacitacionesAdapter extends  RecyclerView.Adapter<CapacitacionesA
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.recycler_view_capacitaciones, parent, false);
-        return new CapacitacionesAdapter.MyViewHolder(v);
+                .inflate(R.layout.recycler_view_sanciones, parent, false);
+        return new SancionesAdapter.MyViewHolder(v);
     }
 
     @Override
