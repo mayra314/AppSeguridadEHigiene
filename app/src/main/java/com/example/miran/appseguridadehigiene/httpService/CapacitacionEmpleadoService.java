@@ -24,7 +24,7 @@ public class CapacitacionEmpleadoService {
             protected List<CapacitacionTO> doInBackground(Long... voids) {
                 List<CapacitacionTO> listCapacitaciones = null;
                 try {
-                    URL url = new URL("http://192.168.1.68:3000/api/user/Capacitaciones?matricula="+voids[0]);
+                    URL url = new URL("http://10.11.1.46:3000/api/user/Capacitaciones?matricula="+voids[0]);
                     HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                     urlConnection.setRequestMethod("GET");
                     int responseCode = urlConnection.getResponseCode();
