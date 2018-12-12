@@ -35,11 +35,11 @@
             android:src="@drawable/ic_person_black_24dp" />
 
         <TextView
+            android:id="@+id/idingreso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:gravity="center"
-            android:text="Bienvenida Mayra"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#000000"
             android:textStyle="bold" />
@@ -49,27 +49,30 @@
             android:orientation="horizontal">
 
 
-        <EditText
-            android:drawableEnd="@drawable/ic_search_black_24dp"
-            android:id="@+id/et_pass_login"
-            android:layout_width="0px"
-            android:layout_weight="3"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:textColorHint="#000000"
-            android:hint="@string/ingresar_matricula"
-            android:background="@drawable/elemento_search"
-            android:inputType="text"
-            android:maxLength="50"
-            android:textSize="15sp" />
+            <EditText
+
+                android:id="@+id/et_pass_login"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:hint="@string/ingresar_matricula"
+                android:inputType="text"
+                android:maxLength="50"
+                android:layout_margin="5dp"
+                android:padding="8dp"
+                android:textColorHint="#000000"
+                android:textSize="15sp"/>
 
 
-        <Button
-            android:id="@+id/search"
-            android:layout_width="0px"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="ok"/>
+            <ImageButton
+                android:id="@+id/search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:background="@color/azulTapia"
+                android:layout_margin="5dp"
+                android:src="@drawable/lupablanca" />
     </LinearLayout>
 
             <TextView

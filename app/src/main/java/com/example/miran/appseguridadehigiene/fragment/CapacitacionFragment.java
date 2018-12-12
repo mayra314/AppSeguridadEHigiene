@@ -9,12 +9,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.miran.appseguridadehigiene.R;
 import com.example.miran.appseguridadehigiene.adapter.CapacitacionAdapter;
+import com.example.miran.appseguridadehigiene.entityTO.CapacitacionTO;
 import com.example.miran.appseguridadehigiene.entityTO.EmpleadoTO;
 import com.example.miran.appseguridadehigiene.httpService.CapacitacionEmpleadoService;
 
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -56,13 +60,22 @@ public class CapacitacionFragment extends Fragment {
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
+        ImageView image =  view.findViewById(R.id.sinresultadoscapa);
+        TextView resultados = view.findViewById(R.id.labelresuntadoscap);
+        List<CapacitacionTO> capacitaciones = null;
         try {
-            mAdapter = new CapacitacionAdapter(service.getCapacitaciones(Long.parseLong(String.valueOf(empleado.getPkEmpleado()) + String.valueOf(empleado.getFkEmpresa())+String.valueOf(empleado.getFkTipoUsuario()))),getContext());
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+            capacitaciones = service.getCapacitaciones(Long.parseLong(String.valueOf(empleado.getPkEmpleado()) + String.valueOf(empleado.getFkEmpresa()) + String.valueOf(empleado.getFkTipoUsuario())));
+        } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
+
+        if ( capacitaciones != null && capacitaciones.size() > 0 ) {
+            image.setVisibility(View.GONE);
+            resultados.setVisibility(View.GONE);
+
+        }
+            mAdapter = new CapacitacionAdapter(capacitaciones,getContext());
+
         mRecyclerView.setAdapter(mAdapter);
         return view;
     }

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.example.miran.appseguridadehigiene.R;
 import com.example.miran.appseguridadehigiene.SancionActivity;
@@ -35,8 +36,8 @@ public class PerfilEmpFragment extends Fragment {
     private ResponseUserTO user;
     private FloatingActionButton registro;
     private OnFragmentInteractionListener mListener;
-    private Button capacitacion;
-    private Button sancion;
+    private ImageButton capacitacion;
+    private ImageButton sancion;
     public PerfilEmpFragment() {
         // Required empty public constructor
     }

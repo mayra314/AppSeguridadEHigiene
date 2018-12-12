@@ -198,7 +198,7 @@
                 android:layout_weight="1"
                 android:clickable="true"
                 android:paddingRight="@dimen/activity_horizontal_margin"
-                android:src="@android:drawable/ic_menu_send" />
+                android:src="@drawable/archivosave" />
 
         </LinearLayout>
     </ScrollView>

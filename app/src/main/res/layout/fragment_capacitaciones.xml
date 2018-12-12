@@ -11,4 +11,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <ImageView
+        android:layout_margin="20dp"
+        android:id="@+id/sinresultadoscapa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/sinresultado"/>
+
+<TextView
+    android:layout_below="@+id/sinresultadoscapa"
+    android:id="@+id/labelresuntadoscap"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textStyle="bold"
+    android:textColor="@color/azulTapia"
+    android:text="Oops no se encontraron resultados !"/>
 </RelativeLayout>

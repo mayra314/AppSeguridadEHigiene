@@ -81,8 +81,6 @@
                 android:maxLength="50"
                 android:textSize="15sp" />
 
-
-
         </android.support.design.widget.TextInputLayout>
 
            <LinearLayout
@@ -92,19 +90,20 @@
             <TextView
                 android:layout_width="0px"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
+                android:layout_weight="5"
                 android:text="@string/capacitaciones"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:textColor="@color/azulTapia" />
 
-            <Button
-                android:id="@+id/btnCapacitaciones"
-                android:layout_width="0px"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="ok"/>
 
-        </LinearLayout>
+               <ImageButton
+                   android:id="@+id/btnCapacitaciones"
+                   android:layout_width="0dp"
+                   android:layout_weight="1"
+                   android:layout_height="wrap_content"
+                   app:backgroundTint="@color/azulTapia"
+                   android:src="@drawable/ic_folder_open_black_24dp" />
+           </LinearLayout>
 
 
 
@@ -114,18 +113,19 @@
             android:orientation="horizontal">
             <TextView
                 android:layout_width="0px"
-                android:layout_weight="4"
+                android:layout_weight="5"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:textAppearanceMedium"
                 android:text="@string/sanciones"
                 android:textColor="@color/azulTapia"/>
 
-            <Button
+            <ImageButton
                 android:id="@+id/btnSanciones"
-                android:layout_width="0px"
-                android:layout_weight="1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="ok"/>
+                android:layout_weight="1"
+                android:src= "@drawable/ic_folder_open_black_24dp"
+                app:backgroundTint="@color/azulTapia"/>
 
         </LinearLayout>
 
@@ -138,5 +138,6 @@
         android:layout_height="50dp"
         android:layout_gravity="end|bottom"
         android:layout_margin="20dp"
-        app:backgroundTint="@color/colorPrimary" />
+        android:src="@drawable/editarblanco"
+        app:backgroundTint="@color/azulTapia" />
 </FrameLayout>

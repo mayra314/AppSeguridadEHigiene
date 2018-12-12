@@ -9,12 +9,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.miran.appseguridadehigiene.R;
 import com.example.miran.appseguridadehigiene.adapter.SancionesAdapter;
 import com.example.miran.appseguridadehigiene.entityTO.EmpleadoTO;
+import com.example.miran.appseguridadehigiene.entityTO.ReporteSancionTO;
 import com.example.miran.appseguridadehigiene.httpService.SancionEmpleadoService;
 
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -49,18 +53,26 @@ public class SansionescionesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_sanciones, container, false);
+
+        ImageView   image =  view.findViewById(R.id.sinresultados);
+        TextView resultados = view.findViewById(R.id.labelresuntadossan);
+
         SancionEmpleadoService service = new SancionEmpleadoService();
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_sanciones);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
+        List<ReporteSancionTO> sanciones = null;
         try {
-            mAdapter = new SancionesAdapter(service.getSanciones(Long.parseLong(String.valueOf(empleado.getPkEmpleado()) + String.valueOf(empleado.getFkEmpresa())+String.valueOf(empleado.getFkTipoUsuario()))),getContext());
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+            sanciones = service.getSanciones(Long.parseLong(String.valueOf(empleado.getPkEmpleado()) + String.valueOf(empleado.getFkEmpresa()) + String.valueOf(empleado.getFkTipoUsuario())));
+        } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
+        if (sanciones != null && sanciones.size() > 0) {
+            image.setVisibility(View.GONE);
+            resultados.setVisibility(View.GONE);
+        }
+        mAdapter = new SancionesAdapter(sanciones,getContext());
         mRecyclerView.setAdapter(mAdapter);
 
         return view;

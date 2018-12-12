@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.miran.appseguridadehigiene.EmpleadoActivity;
@@ -31,7 +33,7 @@ import java.util.List;
 public class HSEFragment extends Fragment {
 
     private Button hsefragment;
-    private Button search;
+    ImageButton  search;
     private EditText buscarCaja;
     public static final String USER_ADMIN = "userAdmin";
     private ResponseUserTO user;
@@ -60,6 +62,9 @@ public class HSEFragment extends Fragment {
         hsefragment = view.findViewById(R.id.bt_ScanCod);
         buscarCaja = view.findViewById(R.id.et_pass_login);
         search = view.findViewById(R.id.search);
+
+        TextView textView =  view.findViewById(R.id.idingreso);
+        textView.setText("Bienvenid@ " + user.getUsuario());
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
